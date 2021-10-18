@@ -1,0 +1,16 @@
+{
+    "name": "Queue Minimizer",
+    "namespace": "QueueMinimizerNamespace\\QueueMinimizerClass", 
+    "description": "This module automtically minimizes REDCap's survey queue to hide previously completed surveys from the queue. Note that for repeatable surveys the final repeat will remain so that the button to allow further responses remains visible",
+    "authors": [
+        {
+             "name": "Eric Smith",
+             "email": "erics@frontier-science.co.uk",
+             "institution": "Frontier Science Scotland (Ltd)"
+         }
+     ],
+     "permissions": [
+        "redcap_every_page_top",
+		"redcap_survey_complete"
+      ]
+ }
