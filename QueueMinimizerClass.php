@@ -20,7 +20,7 @@ class QueueMinimizerClass extends AbstractExternalModule {
 		//-1 if not found so anything else is a survey queue page
 		if ($sq_index > -1) {
 		
-        $(document).ready(function() {
+                $(document).ready(function() {
 			//search for the Completed status and hide
 			$linktext = "Completed";
 			$("tr").each(function(){
@@ -51,7 +51,7 @@ class QueueMinimizerClass extends AbstractExternalModule {
 		//-1 if not found so anything else is a survey queue page
 		if ($sq_index > -1) {
 		
-        $(document).ready(function() {
+                $(document).ready(function() {
 			//search for the link displayed when table collapsed, it may not exist
 			$linktext = "Submit";
 			$("tr").each(function(){
@@ -72,13 +72,13 @@ class QueueMinimizerClass extends AbstractExternalModule {
 	function redcap_every_page_top($project_id) 
     {
         self::hide_completed_surveys();
-		self::show_repeat_rows();
+	self::show_repeat_rows();
 	} 
 
     // when a survey is complete the survey queue may be displayed so hide completed surveys there as well
 	function redcap_survey_complete($project_id, $record, $instrument, $event_id, $group_id, $repeat_instance) 
     {
         self::hide_completed_surveys();
-		self::show_repeat_rows();
+	self::show_repeat_rows();
     }	
 }
