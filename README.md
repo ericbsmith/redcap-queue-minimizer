@@ -2,7 +2,7 @@
 This REDCap external module hides completed surveys from the survey queue. Note that when repeatable surveys are used the final repeat is always shown to allow further surveys to be submitted.
 
 
-The logic relies on the text which has been specified in the "Repeat the survey" field in the Survey Settings page within REDCap.  For example, if the text is "Submit another" the Button Keyword can be specified as "Submit". You should consider using the dame keyword within the button text for any repeatable surveys which you want to minimize within the Survey Queue.
+The logic relies on the text which has been specified in the "Repeat the survey" field in the Survey Settings page within REDCap.  For example, if the text is "Submit another" the Button Keyword can be specified as "Submit" in the module configuration. You should consider using the same keyword within the button text for any repeatable surveys which you want to minimize within the Survey Queue.
 
 ## Author 
 Eric Smith, Frontier Science Scotland Ltd
