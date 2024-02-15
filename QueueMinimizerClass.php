@@ -38,8 +38,9 @@ class QueueMinimizerClass extends AbstractExternalModule {
         <?php
 	}
 	
-	static function show_repeat_rows()
+	static function show_repeat_rows($p_button_keyword)
 	{
+	
 		?>
         <script type="text/javascript">
 		
@@ -51,13 +52,15 @@ class QueueMinimizerClass extends AbstractExternalModule {
 		//-1 if not found so anything else is a survey queue page
 		if ($sq_index > -1) {
 		
-                $(document).ready(function() {
+            $(document).ready(function() {
 			//search for the link displayed when table collapsed, it may not exist
-			$linktext = "Submit";
+			
+			var param1 = '<?php echo $p_button_keyword; ?>';
+									
 			$("tr").each(function(){
-				if ($("td:contains('" + $linktext + "')", this).length != 0) {
+				if ($("td:contains('" + param1 + "')", this).length != 0) {
 					$(this).show();
-                }	
+					}	
 			})
 						
 			// show the hidden rows
@@ -72,13 +75,13 @@ class QueueMinimizerClass extends AbstractExternalModule {
 	function redcap_every_page_top($project_id) 
     {
         self::hide_completed_surveys();
-	self::show_repeat_rows();
+	    self::show_repeat_rows($this->getProjectSetting('button_keyword'));
 	} 
 
     // when a survey is complete the survey queue may be displayed so hide completed surveys there as well
 	function redcap_survey_complete($project_id, $record, $instrument, $event_id, $group_id, $repeat_instance) 
     {
         self::hide_completed_surveys();
-	self::show_repeat_rows();
+	    self::show_repeat_rows($this->getProjectSetting('button_keyword'));
     }	
 }
