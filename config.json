@@ -12,5 +12,13 @@
      "permissions": [
         "redcap_every_page_top",
 		"redcap_survey_complete"
-      ]
+      ],
+	 "project-settings": [
+        {
+            "key": "button_keyword",
+            "name": "Button Keyword (set a keyword which is included in the 'Repeat the survey' setting in Survey Settings)",
+            "required": true,
+			"type": "text"
+        }
+    ] 
  }
